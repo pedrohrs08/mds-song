@@ -287,29 +287,69 @@ a {
 <div id="div_group_2" class="example_group passed">
   <dl style="margin-left: 15px;">
   <dt id="example_group_2" class="passed">class should have correct method </dt>
-    <script type="text/javascript">moveProgressBar('20.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">should respond to #name</span><span class='duration'>0.03600s</span></dd>
-    <script type="text/javascript">moveProgressBar('40.0');</script>
+    <script type="text/javascript">moveProgressBar('14.2');</script>
+    <dd class="example passed"><span class="passed_spec_name">should respond to #name</span><span class='duration'>0.07600s</span></dd>
+    <script type="text/javascript">moveProgressBar('28.5');</script>
+    <dd class="example passed"><span class="passed_spec_name">should respond to #artist</span><span class='duration'>0.00300s</span></dd>
+    <script type="text/javascript">makeRed('rspec-header');</script>
+    <script type="text/javascript">makeRed('div_group_2');</script>
+    <script type="text/javascript">makeRed('example_group_2');</script>
+    <script type="text/javascript">moveProgressBar('42.8');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">should respond to #number_of_plays</span>
+      <span class="duration">0.00200s</span>
+      <div class="failure" id="failure_1">
+        <div class="message"><pre>expected #&lt;Song _id: 53fcf9ea41435f2a08000000, name: nil, artist: nil, album: nil&gt; to respond to :number_of_plays</pre></div>
+        <div class="backtrace"><pre>./spec/models/song_spec.rb:11:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">9</span>      it { should respond_to :artist }
+<span class="linenum">10</span>      it { should respond_to :album  }
+<span class="offending"><span class="linenum">11</span>      it { should respond_to :number_of_plays }</span>
+<span class="linenum">12</span>    end
+<span class="linenum">13</span>    
+<span class="linenum">14</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('57.1');</script>
     <dd class="example passed"><span class="passed_spec_name">should respond to #album</span><span class='duration'>0.00200s</span></dd>
-    <script type="text/javascript">moveProgressBar('60.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">should respond to #artist</span><span class='duration'>0.00200s</span></dd>
   </dl>
 </div>
 <div id="div_group_3" class="example_group passed">
   <dl style="margin-left: 15px;">
-  <dt id="example_group_3" class="passed">communication with mongo db</dt>
-    <script type="text/javascript">moveProgressBar('80.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">should create a new song</span><span class='duration'>0.02700s</span></dd>
-    <script type="text/javascript">moveProgressBar('100.0');</script>
-    <dd class="example passed"><span class="passed_spec_name">should retrieve a song</span><span class='duration'>0.02300s</span></dd>
+  <dt id="example_group_3" class="passed">#number_of_plays</dt>
+    <script type="text/javascript">makeRed('div_group_3');</script>
+    <script type="text/javascript">makeRed('example_group_3');</script>
+    <script type="text/javascript">moveProgressBar('71.4');</script>
+    <dd class="example failed">
+      <span class="failed_spec_name">should return the number of occurrences in the db</span>
+      <span class="duration">0.01500s</span>
+      <div class="failure" id="failure_2">
+        <div class="message"><pre>undefined method `number_of_plays&#39; for #&lt;Song:0x488ab70&gt;</pre></div>
+        <div class="backtrace"><pre>./spec/models/song_spec.rb:21:in `block (3 levels) in &lt;top (required)&gt;&#39;</pre></div>
+    <pre class="ruby"><code><span class="linenum">19</span>	  it "should return the number of occurrences in the db" do
+<span class="linenum">20</span>         record = Song.new(name: "Pop Song", artist: "Madonna")
+<span class="offending"><span class="linenum">21</span>         expect(record.number_of_plays).to eq 3</span>
+<span class="linenum">22</span>	  end
+<span class="linenum">23</span>    end
+<span class="linenum">24</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
   </dl>
 </div>
-<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.10201 seconds</strong>";</script>
-<script type="text/javascript">document.getElementById('totals').innerHTML = "5 examples, 0 failures";</script>
+<div id="div_group_4" class="example_group passed">
+  <dl style="margin-left: 15px;">
+  <dt id="example_group_4" class="passed">communication with mongo db</dt>
+    <script type="text/javascript">moveProgressBar('85.7');</script>
+    <dd class="example passed"><span class="passed_spec_name">should create a new song</span><span class='duration'>0.01100s</span></dd>
+    <script type="text/javascript">moveProgressBar('100.0');</script>
+    <dd class="example passed"><span class="passed_spec_name">should retrieve a song</span><span class='duration'>0.02900s</span></dd>
+  </dl>
+</div>
+<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>0.20901 seconds</strong>";</script>
+<script type="text/javascript">document.getElementById('totals').innerHTML = "7 examples, 2 failures";</script>
 </div>
 </div>
 </body>
 </html>
 
-Randomized with seed 46739
+Randomized with seed 48211
 
