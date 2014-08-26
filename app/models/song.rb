@@ -8,4 +8,8 @@ class Song
   def number_of_plays
     Song.where(name: name, artist: artist, album: album).count
   end
+
+  def ==(other_song)
+    name == other_song.name && artist == other_song.artist
+  end
 end

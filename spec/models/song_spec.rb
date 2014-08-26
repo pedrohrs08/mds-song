@@ -21,6 +21,16 @@ describe Song, :type => :model do
          expect(record.number_of_plays).to eq 3
 	  end
     end
+
+    context "equality" do
+      let(:song) { Song.new(name: "Song1", artist: "Artist1") }
+      let(:same_song) { Song.new(name: "Song1", artist: "Artist1")}
+      let(:not_same_song) { Song.new(name: "Song2", artist: "Artist2")}
+
+      subject { song }
+      it { should eq same_song}
+      it { should_not eq not_same_song}
+    end
     
     context "communication with mongo db" do 
 	  before(:each) do
