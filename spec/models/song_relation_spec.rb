@@ -12,22 +12,19 @@ describe SongRelation, :type => :model do
       let (:song_relation2) { SongRelation.new }
 
       before(:each) do
-      	 p song
-         song_relation.song1 = song
-         song_relation.song2 = different_song
+      	song_relation.songs << song
+         song_relation.songs << different_song
 
-         same_relation.song1 = song
-         same_relation.song2 = different_song
+         same_relation.songs << song.dup
+         same_relation.songs << different_song.dup
 
-         song_relation2.song1 = different_song
-         song_relation2.song2 = song
+         song_relation2.songs << different_song.dup
+         song_relation2.songs << song.dup
       end
 
       subject { song_relation }
-
-      it { should eq same_relation }
-      it { should eq song_relation2 }
-
+      it { should eq(same_relation) }
+      it { should eq(song_relation2) }
 	end
 
 end

@@ -1,13 +1,16 @@
 class SongRelation
 	include Mongoid::Document
      
-    has_one :song1, class_name: "Song", inverse_of: :first_position_relation
-    has_one :song2, class_name: "Song", inverse_of: :second_position_relation
-    field :collaborative_factor, type: Integer
+    embeds_many :songs
 
     def ==(other_song_relation)
-       (((song1 == other_song_relation.song1) && (song2 == other_song_relation.song2)) ||
-       ((song2 == other_song_relation.song1) && (song1 == other_song_relation.song2)))
+       songs.to_a == other_song_relation.songs.to_a  ||
+       songs.to_a.reverse == other_song_relation.songs.to_a
     end
 
+    validate :two_songs
+
+    def two_songs
+   	  errors.add(:songs, "The Relation must have two songs") if self.songs.count != 2
+    end
 end
