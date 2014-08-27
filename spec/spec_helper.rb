@@ -37,11 +37,11 @@ RSpec.configure do |config|
   config.order = "random"
 
   config.before :each do
-    DatabaseCleaner.strategy = :truncation
-    DatabaseCleaner.start
+#    DatabaseCleaner.strategy = :truncation
+ #   DatabaseCleaner.start
   end
 
   config.after do
-    DatabaseCleaner.clean
+ #   DatabaseCleaner.clean
   end
 end
