@@ -1,6 +1,8 @@
 require 'spec_helper'
 
+module Relations
 describe SongRelation, :type => :model do
+
 	context "available methods" do
        subject { SongRelation.new }
        it { should respond_to :songs }
@@ -97,4 +99,5 @@ describe SongRelation, :type => :model do
       it { should eq(same_relation) }
       it { should eq(song_relation2) }
 	end
+end
 end

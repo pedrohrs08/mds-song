@@ -1,6 +1,9 @@
 require 'spec_helper'
 
-describe Song, :type => :model do    
+module Relations
+describe Song, :type => :model do
+    include Relations
+
     context "class should have correct method " do
       subject { Song.new }
       
@@ -19,4 +22,5 @@ describe Song, :type => :model do
       it { should eq same_song}
       it { should_not eq not_same_song}
     end
+end
 end
