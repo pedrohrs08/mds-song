@@ -4,5 +4,7 @@ module UsersHistory
 		field :username, type: String
 		field :email, type: String
 
+		emebeds :listened_songs
+
 	end
 end
